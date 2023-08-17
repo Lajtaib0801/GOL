@@ -13,6 +13,7 @@ _start:
     call end_of_game
 
 
+.type clear_screen, @function
 clear_screen:
     pushl %ebp
     movl %esp, %ebp
@@ -35,6 +36,8 @@ clear_screen:
     popl %ebp
     ret
 
+
+.type end_of_game, @function
 end_of_game:
     movl $1, %eax
     movl $0, %ebx
