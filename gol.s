@@ -1,19 +1,19 @@
 #32bit GAS Game of Life assembly program
 
-    .data
+.data
 clear:
 	.ascii "\033c"
 	
     .equ len, . - clear
 
-    .text
-    .globl _start
+.text
+.globl _start
 _start:
     call clear_screen
     call end_of_game
 
 
-    .type clear_screen, @function
+.type clear_screen, @function
 clear_screen:
     pushl %ebp
     movl %esp, %ebp
@@ -39,7 +39,7 @@ clear_screen:
     ret
     
 
-    .type end_of_game, @function
+.type end_of_game, @function
 end_of_game:
     movl $1, %eax
     movl $0, %ebx
