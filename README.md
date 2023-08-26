@@ -10,5 +10,5 @@ $ ./compile.sh
 ```
 If you cannot run the script, make it executable explicitly
 ```
-chmod +x compile.sh
+$ chmod +x compile.sh
 ```
