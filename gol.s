@@ -1,16 +1,6 @@
 #32bit GAS Game of Life assembly program
 
 
-    .data
-clear:
-	.ascii "\033c"
-    .equ len, . - clear
-
-
-kiir:
-    .asciz "A szam: %d\n"
-
-
     .bss
     .comm buffer, 1600         #20*20 table of 32-bit integers (1600 bytes)
 
@@ -19,10 +9,7 @@ kiir:
     .text
     .globl _start
 _start:
-    pushl $clear                #push clear's memory address onto the stack
-    pushl $len                  #push the length onto the stack
     call clear_screen           #call clear_screen
-    addl $8, %esp               #move back the ESP to the original location
 
 
     pushl $1                    #upper bound of the random numbers (inclusive)
