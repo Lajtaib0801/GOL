@@ -14,9 +14,7 @@ print_array:
     
     movl 8(%ebp), %eax  #buffer's start
     movl 12(%ebp), %ebx #numbers
-    dec %ebx            #because of the indexin, we need to decrement EBX by 1
     movl 16(%ebp), %ecx #lenght of a line
-    dec %ecx            #because of the indexes it's easier to use line length - 1 
     movl $0, %edx       #index
     movl $0, %edi       #this will count the cols
 
