@@ -1,8 +1,8 @@
     .data
 zero:   
-    .ascii "0"
+    .ascii " "
 one:
-    .ascii "1"
+    .ascii "#"
 
 
     .text
