@@ -9,7 +9,7 @@
     .text
     .globl _start
 _start:
-    call clear_screen           #call clear_screen
+    #call clear_screen           #call clear_screen
 
 
     pushl $1                    #upper bound of the random numbers (inclusive)
@@ -19,12 +19,23 @@ _start:
     pushl $buffer               #memory location 
     call rand_array             #fills the buffer with random 1s and 0s
     addl $20, %esp              #sets the ESP back to the state before 'rand_array' (we put 5 32-bit values onto the stack, which is 5x4bytes=20bytes)
+
+loop:
+    call clear_screen
     
     pushl $22                   #length of a line
     pushl $484                  #number of numbers
     pushl $buffer
     call print_array
     addl $12, %esp
+
+    pushl $buffer
+    call next_round
+    addl $4, %esp
+
+    
+    call wait
+    jmp loop
     
     
     call end_of_game

@@ -2,8 +2,10 @@
 zero:   
     .ascii " "
 one:
-    .ascii "#"
+    .ascii "C"
 
+two:
+    .ascii "#"
 
     .text
     .globl print_value
@@ -18,10 +20,18 @@ print_value:
     pushl %edx
     
     cmp $0, %esi
-    jne write_one
+    je write_zero
+    
+    cmp $1, %esi
+    je write_one
 
+    movl $two, %ecx
+    jmp write
+    
+write_zero:
     movl $zero, %ecx
     jmp write
+
 
 write_one:
     movl $one, %ecx
