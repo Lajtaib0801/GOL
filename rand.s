@@ -18,7 +18,7 @@ is_random:
 
     xor %edx, %edx              #0 the value of EDX --> zero out the high bits for division
     subl %edi, %esi             #range of possible values into ESI
-    div %esi                    #overflow remainder into RDX
+    div %esi                    #overflow remainder into EDX
     addl %edx, %edi             #adjust remainder to start of range
 
     movl %edi, %eax             #return value into EAX
