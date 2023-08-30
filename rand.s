@@ -21,7 +21,7 @@ is_random:
     div %esi                    #overflow remainder into RDX
     addl %edx, %edi             #adjust remainder to start of range
 
-    movl %edi, %eax             #reutrn value into EAX
+    movl %edi, %eax             #return value into EAX
     
 
     
