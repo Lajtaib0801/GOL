@@ -12,3 +12,4 @@ If you cannot run the script, make it executable explicitly
 ```
 $ chmod +x compile.sh
 ```
+##Processors before Ivy Bridge will produce an illegal instruction error at runtime because of the rdrand in rand.s!
